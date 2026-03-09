@@ -1,0 +1,36 @@
+# =========================================
+# Cupcats Visual Template
+# =========================================
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary
+*.tmp
+*.temp
+
+# Node (未來如果有)
+node_modules/
+
+# Build folders (未來如果有)
+dist/
+build/
+
+# Cloudflare
+.wrangler/
+
+# Env
+.env
+.env.local
+
+# Mac
+.AppleDouble
+.LSOverride
