@@ -1,0 +1,199 @@
+/* =========================================
+   20 - Header / Nav (Brand v2)
+   - Unified glass system (surface/border/shadow from tokens)
+========================================= */
+
+/* Header shell */
+.s-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    background: var(--header-surface);
+    border: none;
+    border-bottom: 1px solid var(--header-border);
+
+    -webkit-backdrop-filter: blur(var(--header-blur));
+    backdrop-filter: blur(var(--header-blur));
+
+    box-shadow: var(--header-shadow);
+}
+
+/* Desktop nav row */
+.c-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--header-pad-y) 0;
+    gap: 16px;
+}
+
+/* Brand */
+.c-brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.c-brand__logo {
+    height: 34px;
+    width: auto;
+    display: block;
+    transform: translateY(1px);
+}
+
+/* Right area */
+.c-nav__right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Menu links */
+.c-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    font-size: var(--fs-nav);
+    color: var(--stone-700);
+}
+
+.c-menu a {
+    opacity: .78;
+    transition: opacity 180ms ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.c-menu a:hover,
+.c-menu a.is-active {
+    opacity: 1;
+}
+
+/* Burger button */
+.c-menuBtn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+
+    display: none;
+    /* shown in RWD */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+
+    cursor: pointer;
+
+    border: 1px solid var(--btn-border);
+    background: var(--btn-bg);
+}
+
+.c-menuBtn span {
+    width: 18px;
+    height: 1.4px;
+    background: var(--text);
+    opacity: .65;
+}
+
+/* Overlay */
+.c-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+
+    background: var(--overlay-bg);
+
+    -webkit-backdrop-filter: blur(var(--overlay-blur));
+    backdrop-filter: blur(var(--overlay-blur));
+}
+
+/* Drawer */
+.c-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    height: 100svh;
+    width: min(360px, 86vw);
+
+    z-index: 100;
+
+    background: var(--drawer-surface);
+    border-left: 1px solid var(--drawer-border);
+    box-shadow: var(--drawer-shadow);
+
+    -webkit-backdrop-filter: blur(var(--drawer-blur));
+    backdrop-filter: blur(var(--drawer-blur));
+
+    transform: translateX(100%);
+    transition: transform 260ms ease;
+}
+
+.c-drawer__inner {
+    padding: 18px 18px 26px;
+}
+
+.c-drawer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 6px 2px 18px;
+}
+
+.c-drawer__title {
+    font-size: var(--fs-drawer-title);
+    letter-spacing: var(--ls-drawer-title);
+    opacity: .75;
+    color: var(--stone-700);
+}
+
+.c-drawer__close {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+.c-drawer__link {
+    display: block;
+    padding: 14px 10px;
+    border-radius: 14px;
+
+    color: var(--text);
+    opacity: .92;
+    text-decoration: none;
+}
+
+.c-drawer__link:hover {
+    background: var(--drawer-link-hover-bg);
+}
+
+.c-drawer__cta {
+    margin-top: 18px;
+}
+
+/* Open state (配合 JS：html.menu-open) */
+html.menu-open .c-drawer {
+    transform: translateX(0);
+}
+
+/* [hidden] 保底（確保 overlay 真隱藏） */
+[hidden] {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .c-menu {
+        display: none;
+    }
+
+    .c-menuBtn {
+        display: inline-flex;
+    }
+}

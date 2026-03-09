@@ -1,0 +1,117 @@
+/* =========================================================
+   23 - Booking / Contact Layout (Final / Token-driven)
+   - section: .s-booking
+   - layout : .l-bookingGrid
+   - helpers: .s-booking__* / .s-contact__*
+   - unified breakpoints: 900 / 560
+   Notes:
+   - Typography sizes live in 03-typography.css
+   - This file handles layout / spacing / surfaces only
+========================================================= */
+
+
+/* =========================================================
+   Base Section
+========================================================= */
+
+.s-booking {
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   Layout
+========================================================= */
+
+.l-bookingGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 42px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   Left Content
+========================================================= */
+
+.s-booking__title {
+    margin: 0 0 14px;
+}
+
+.s-booking__sub {
+    margin: 0 0 26px;
+    max-width: 54ch;
+
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: var(--fs-small);
+}
+
+.s-booking__left .c-featureList {
+    margin-top: var(--space-block-lg);
+}
+
+
+/* =========================================================
+   Generic Card Wrapper
+========================================================= */
+
+.s-booking__card {
+    padding: 26px;
+    border-radius: var(--radius);
+}
+
+.s-booking__noteCard {
+    margin-top: var(--space-block-lg);
+}
+
+
+/* =========================================================
+   Contact-specific helpers
+========================================================= */
+
+.s-contact__col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-block-lg);
+}
+
+.s-contact__col--right {
+    padding-top: 250px;
+}
+
+.s-contact__card {
+    width: 100%;
+}
+
+
+/* =========================================================
+   RWD — Tablet & Below (≤ 900px)
+========================================================= */
+
+@media (max-width: 900px) {
+    .l-bookingGrid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .s-booking__card {
+        padding: 22px;
+    }
+
+    .s-contact__col--right {
+        padding-top: 0;
+    }
+}
+
+
+/* =========================================================
+   RWD — Mobile (≤ 560px)
+========================================================= */
+
+@media (max-width: 560px) {
+    .s-booking__card {
+        padding: 18px;
+    }
+}

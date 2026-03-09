@@ -1,0 +1,50 @@
+<header class="s-header" role="banner">
+    <div class="l-container">
+        <div class="c-nav">
+            <a class="c-brand" href="/" aria-label="Cupcats Visual 首頁">
+                <img src="/assets/img/header-cupcatlogo.svg" alt="Cupcats Visual" class="c-brand__logo">
+            </a>
+
+            <div class="c-nav__right">
+                <nav class="c-menu" id="desktopMenu" aria-label="主選單">
+                    <a href="/services/">服務</a>
+                    <a href="/about/">關於</a>
+                    <a href="/contact/">聯絡</a>
+                </nav>
+
+                <button class="c-menuBtn" type="button" aria-label="開啟主選單" aria-expanded="false"
+                    aria-controls="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <a class="c-button c-button--ghost" href="/booking/">預約</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="c-overlay" hidden data-menu-close></div>
+
+<div class="c-drawer" id="mobileMenu" aria-hidden="true" aria-label="手機選單" role="dialog" tabindex="-1">
+    <div class="c-drawer__inner">
+        <div class="c-drawer__top">
+            <span class="c-drawer__title">選單</span>
+
+            <button class="c-iconBtn c-drawer__close" type="button" aria-label="關閉主選單" data-menu-close>
+                ✕
+            </button>
+        </div>
+
+        <nav class="c-drawer__nav" aria-label="手機主選單">
+            <a href="/services/" class="c-drawer__link">服務</a>
+            <a href="/about/" class="c-drawer__link">關於</a>
+            <a href="/contact/" class="c-drawer__link">聯絡</a>
+        </nav>
+
+        <div class="c-drawer__cta">
+            <a class="c-button c-button--primary" href="/booking/">前往預約</a>
+        </div>
+    </div>
+</div>

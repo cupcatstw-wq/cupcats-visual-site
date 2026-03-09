@@ -1,0 +1,231 @@
+/* =========================================
+   21 - Hero (Final Clean / Integrated)
+   - Homepage hero : .s-hero--bg (background)
+   - Service hero  : .s-hero--service (split)
+   Notes:
+   - No cross override with 22-services.css
+   - Hero layout lives here only
+   - Typography (font-size/line-height) lives in 03-typography.css
+========================================= */
+
+
+/* =========================================================
+   Homepage Hero (Background version)
+========================================================= */
+
+.s-hero--bg {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+
+    background-image: url("/assets/img/beautysalon.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay */
+.s-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, .28),
+            rgba(0, 0, 0, .42));
+}
+
+/* Content wrapper (Homepage only — center aligned) */
+.s-hero--bg .s-hero__content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Ensure children truly centered (Homepage only) */
+.s-hero--bg .s-hero__content>* {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Homepage lead center */
+.s-hero--bg .c-lead {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: rgba(255, 255, 255, .88);
+}
+
+/* Homepage kicker */
+.s-hero--bg .c-kicker {
+    color: rgba(255, 255, 255, .70);
+    letter-spacing: .18em;
+}
+
+/* Homepage buttons center */
+.s-hero--bg .c-btnRow {
+    justify-content: center;
+}
+
+/* Homepage H1: desktop prefer single-line (safe) */
+.s-hero--bg h1 {
+    text-wrap: balance;
+}
+
+@media (min-width: 1100px) {
+    .s-hero--bg h1 {
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================================
+   Service Hero (Split layout)
+========================================================= */
+
+.s-hero--service {
+    padding-top: 88px;
+    padding-bottom: 92px;
+}
+
+/* Service hero text: always left */
+.s-hero--service {
+    text-align: left;
+}
+
+/* Service hero spacing only (typography owns sizes) */
+.s-hero--service h1 {
+    margin: 0 0 10px;
+    text-wrap: balance;
+}
+
+.s-hero--service .c-lead {
+    color: var(--muted);
+}
+
+/* Split layout container */
+.s-serviceHeroLayout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 72px;
+}
+
+/* Content wrapper */
+.s-serviceHeroContent {
+    max-width: none;
+}
+
+.s-serviceHeroContent .c-lead {
+    margin: 16px 0 24px;
+}
+
+/* Image: quiet premium (single layer, no glow) */
+.s-serviceHeroImage {
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, .06);
+}
+
+.s-serviceHeroImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Service H1: desktop single-line (safe) */
+@media (min-width: 900px) {
+    .s-hero--service h1 {
+        white-space: nowrap;
+    }
+}
+
+
+/* =========================================================
+   Stats (Homepage only)
+========================================================= */
+
+.c-statList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin: 40px 0 0;
+    padding: 0;
+    opacity: .9;
+}
+
+.c-statList strong {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.c-statList span {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: .85;
+}
+
+
+/* =========================================================
+   Responsive (unified: 900 / 560)
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .s-hero--bg {
+        min-height: 78vh;
+    }
+
+    .s-hero--service {
+        padding-top: 72px;
+        padding-bottom: 78px;
+    }
+
+    .s-serviceHeroLayout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    /* Premium feel on mobile: image first */
+    .s-serviceHeroImage {
+        order: -1;
+        max-width: 640px;
+        margin-left: 0;
+    }
+
+    .c-statList {
+        gap: 18px;
+    }
+
+    .c-statList strong {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .s-hero--bg {
+        min-height: 74vh;
+    }
+
+    .s-hero--service {
+        padding-top: 56px;
+        padding-bottom: 64px;
+    }
+
+    .c-statList {
+        flex-wrap: wrap;
+        row-gap: 16px;
+        column-gap: 22px;
+        margin-top: 28px;
+    }
+}

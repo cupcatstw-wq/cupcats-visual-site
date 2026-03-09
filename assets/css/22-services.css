@@ -1,0 +1,115 @@
+/* =========================================================
+   22 - Services (Brand v2 / Clean)
+   - Section:  .s-services (+ --compact)
+   - Layout :  .l-servicesGrid
+   - Flow   :  .s-flowGrid + .c-stepCard (use .c-panel--liftStrong)
+   Notes:
+   - No FAQ here. FAQ lives in 24-faq.css
+   - Hero rules live in 21-hero.css
+   - Breakpoints unified: 900 / 560
+========================================================= */
+
+/* =========================================================
+   Services Section
+========================================================= */
+
+.s-services {
+    background: var(--stone-50);
+    padding: var(--space-5xl) 0;
+}
+
+.s-services--compact {
+    padding: var(--space-xl) 0;
+}
+
+.s-services .c-sectionHead {
+    margin-bottom: var(--space-2xl);
+}
+
+.s-services .c-servicesBack {
+    margin: 0;
+}
+
+/* =========================================================
+   Grid (Service Cards)
+   - default: 3 columns on desktop
+========================================================= */
+
+.l-servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 340px));
+    justify-content: center;
+    gap: var(--space-xl);
+}
+
+/* ✅ 可選：你真的想超大螢幕 4 欄再打開這段
+@media (min-width: 1200px) {
+    .l-servicesGrid {
+        grid-template-columns: repeat(4, minmax(0, 300px));
+    }
+}
+*/
+
+/* =========================================================
+   Flow — Layout + Spacing Only
+========================================================= */
+
+.s-flowGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-md);
+}
+
+.c-stepCard {
+    padding: var(--space-lg);
+}
+
+/* =========================================================
+   Other services compact row
+========================================================= */
+
+.s-services--compact .c-inlineLinks {
+    margin: 0;
+}
+
+/* =========================================================
+   RWD (unified: 900 / 560)
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .s-services {
+        padding: var(--space-4xl) 0;
+    }
+
+    .l-servicesGrid {
+        grid-template-columns: repeat(2, minmax(0, 320px));
+        justify-content: center;
+        gap: var(--space-lg);
+    }
+
+    .s-flowGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .s-services {
+        padding: var(--space-3xl) 0;
+    }
+
+    .s-services--compact {
+        padding: var(--space-lg) 0;
+    }
+
+    .l-servicesGrid {
+        grid-template-columns: minmax(0, 1fr);
+        justify-content: stretch;
+        gap: var(--space-md);
+    }
+
+    .s-flowGrid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,30 @@
+/* =========================================
+   99 - Responsive (global)
+   Global spacing & layout only
+========================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    /* Section vertical rhythm */
+    .section {
+        padding: 72px 0;
+    }
+
+    /* Container padding（全站一致） */
+    .l-container {
+        padding-inline: 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+
+    .section {
+        padding: 64px 0;
+    }
+
+    .l-container {
+        padding-inline: 16px;
+    }
+}

@@ -1,0 +1,158 @@
+/* =========================================
+   03 - Typography (Brand v2 System)
+   - No layout width control
+   - All sizes driven by tokens
+========================================= */
+
+
+/* -------------------------------------------------
+   Kicker
+------------------------------------------------- */
+
+.c-kicker {
+    font-size: var(--fs-kicker);
+    letter-spacing: var(--ls-kicker);
+    opacity: .60;
+    margin: 0 0 12px;
+    color: var(--stone-600);
+}
+
+
+/* -------------------------------------------------
+   Headings (global)
+------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+    letter-spacing: var(--ls-heading);
+    margin: 0 0 14px;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--ls-h1);
+    margin: 10px 0 16px;
+}
+
+/* Context: Service Hero (typography-only override) */
+.s-hero--service h1 {
+    font-size: var(--fs-h1-service);
+    line-height: var(--lh-h1-service);
+    letter-spacing: var(--ls-h1-service);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+}
+
+
+/* -------------------------------------------------
+   Lead (hero / section intro)
+------------------------------------------------- */
+
+.c-lead {
+    font-size: var(--fs-lead);
+    line-height: var(--lh-lead);
+    color: rgba(41, 37, 36, .90);
+    margin: 0;
+}
+
+/* Optional: readable measure when needed */
+.c-lead--measure {
+    max-width: 46ch;
+}
+
+
+/* -------------------------------------------------
+   Sub paragraph
+------------------------------------------------- */
+
+.c-sub {
+    margin: 0 0 18px;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+/* Optional narrow version */
+.c-sub--measure {
+    max-width: 60ch;
+}
+
+
+/* -------------------------------------------------
+   Muted text
+------------------------------------------------- */
+
+.c-muted {
+    color: var(--muted);
+}
+
+/* =========================================
+   Legal Page Typography
+   用途：
+   - 隱私權政策
+   - 服務條款
+   - 免責聲明
+   - 任何法律文件頁面
+
+   設計原則：
+   - 視覺層級低於首頁與行銷頁
+   - 不搶畫面
+   - 以閱讀舒適為主
+   - 維持品牌的安靜感
+========================================= */
+
+/* 法律頁主標題 */
+.s-legal__title {
+    /* 比首頁 h1 小一階，避免視覺過重 */
+    font-size: clamp(22px, 2.4vw, 26px);
+
+    font-weight: 600;
+    letter-spacing: -0.01em;
+
+    margin-bottom: 8px;
+
+    /* 使用主文字色，不做高對比強化 */
+    color: var(--text);
+}
+
+/* 法律頁副說明文字 */
+.s-legal__desc {
+    font-size: 13px;
+    line-height: 1.9;
+
+    /* 使用 muted 色階，降低情緒強度 */
+    color: var(--muted);
+
+    max-width: 72ch;
+    /* 控制閱讀寬度 */
+}
+
+/* =========================================
+   SectionHead - Legal Variant
+   用於：隱私權政策 / 服務條款 / 法律頁
+   調整視覺層級，避免過於強烈
+========================================= */
+
+.c-sectionHead--legal h1 {
+    font-size: clamp(22px, 2.4vw, 26px);
+    /* 降一階 */
+    font-weight: 600;
+    /* 降低視覺重量 */
+    letter-spacing: -0.01em;
+}
+
+.c-sectionHead--legal .c-sectionHead__sub {
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 72ch;
+}

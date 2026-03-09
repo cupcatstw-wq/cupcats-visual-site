@@ -1,0 +1,377 @@
+/* =========================================
+   00 - Brand System Tokens (Brand v2)
+   Wabi-Sabi Cream (Stone + Amber)
+   Single Source of Truth
+   - All design language lives here
+   - Modules/components must not hardcode rgba
+========================================= */
+
+:root {
+
+   /* =========================================================
+     1) Color System
+  ========================================================= */
+
+   /* Stone palette (warm) */
+   --stone-50: #f7f5f2;
+   --stone-100: #f4efe7;
+   --stone-200: #e8e1d6;
+   --stone-300: #d9d1c5;
+
+   --stone-600: #6a6258;
+   --stone-700: #4f473f;
+   --stone-800: #2f2a25;
+   --stone-900: #1f1b18;
+
+   /* Amber (desaturated) */
+   --amber-50: #fff7e8;
+   --amber-100: #f8e8c9;
+   --amber-200: #f1dba8;
+   --amber-500: #d89b3a;
+   --amber-700: #9f6b22;
+
+
+   /* =========================================================
+     2) Base Colors / Semantic
+  ========================================================= */
+
+   --bg: var(--stone-50);
+   --text: var(--stone-800);
+
+   --muted: rgba(106, 98, 88, .78);
+   --line: rgba(47, 42, 37, .08);
+
+   /* legacy semantic surfaces (kept for compatibility) */
+   --surface: rgba(255, 252, 246, .88);
+   --panel: rgba(255, 250, 242, .78);
+
+   --accent: var(--stone-800);
+   --warm: var(--amber-500);
+   --warm-soft: rgba(216, 155, 58, .10);
+
+
+   /* =========================================================
+     3) Typography System (Brand v2)
+  ========================================================= */
+
+   --font-sans: ui-sans-serif, system-ui, -apple-system,
+      "SF Pro Text", "SF Pro Display",
+      "Noto Sans TC", "PingFang TC", "Heiti TC",
+      "Microsoft JhengHei", Arial, sans-serif;
+
+   --fs-base: 16px;
+
+   --fs-body: 16px;
+   --lh-body: 1.68;
+   --ls-body: -0.01em;
+
+   --fs-small: 14px;
+
+   --fs-kicker: 12px;
+   --ls-kicker: .12em;
+
+   --ls-heading: -0.03em;
+
+   --fs-h1: clamp(40px, 5vw, 64px);
+   --lh-h1: 1.06;
+   --ls-h1: -0.045em;
+
+   --fs-h2: clamp(24px, 2.6vw, 34px);
+   --lh-h2: 1.18;
+
+   --fs-h3: 18px;
+   --lh-h3: 1.25;
+
+   --fs-h1-service: clamp(34px, 3.2vw, 44px);
+   --lh-h1-service: 1.12;
+   --ls-h1-service: -0.03em;
+
+   --fs-lead: 18px;
+   --lh-lead: 1.78;
+
+
+   /* =========================================================
+     Legal / Document System
+     - Privacy Policy / Terms / Disclaimer
+     - quieter, readable rhythm
+  ========================================================= */
+
+   /* Base body */
+   --fs-legal-body: 14px;
+   --lh-legal-body: 1.9;
+
+   /* H2 (章節標題) */
+   --fs-legal-h2: 16px;
+   --lh-legal-h2: 1.35;
+   --ls-legal-h2: -0.01em;
+
+   /* H3 (小節標題) */
+   --fs-legal-h3: 14px;
+   --lh-legal-h3: 1.35;
+
+   /* Spacing */
+   --space-legal-block: 12px;
+   --space-legal-section: 18px;
+   --space-legal-sub: 14px;
+
+   /* Layout */
+   --pad-legal-panel: 20px;
+   --pad-legal-card: 16px;
+   --legal-list-indent: 18px;
+
+   /* Tone */
+   --legal-text-color: var(--muted);
+   --legal-heading-color: var(--text);
+
+   /* Legal reading width (避免視窗太寬時行長亂掉) */
+   --legal-max-w: 72ch;
+
+   /* =========================================================
+     Step Card (Flow) Typography
+  ========================================================= */
+
+   --fs-step-title: 16px;
+   --lh-step-title: 1.3;
+
+   --fs-step-desc: var(--fs-small);
+   --lh-step-desc: 1.85;
+
+   --step-kicker-color: var(--muted);
+   --step-desc-color: var(--text-muted-strong);
+
+
+   /* =========================================================
+     4) Surface / Glass System (Unified)
+     - all translucent surfaces live here
+  ========================================================= */
+
+   /* Surfaces */
+   --surface-1: rgba(255, 255, 255, .55);
+   /* panel/card base */
+   --surface-2: rgba(255, 255, 255, .58);
+   /* lift soft */
+   --surface-3: rgba(255, 255, 255, .62);
+   /* lift strong */
+
+   --surface-hover-soft: rgba(255, 255, 255, .70);
+   --surface-hover-strong: rgba(255, 255, 255, .74);
+
+   /* Borders */
+   --border-glass-1: rgba(255, 255, 255, .55);
+   --border-glass-2: rgba(255, 255, 255, .58);
+   --border-glass-3: rgba(255, 255, 255, .62);
+
+   --border-hover-soft: rgba(255, 255, 255, .70);
+   --border-hover-strong: rgba(255, 255, 255, .72);
+
+   /* Inner highlight (inset) */
+   --inner-1: rgba(255, 255, 255, .75);
+   --inner-2: rgba(255, 255, 255, .78);
+   --inner-hover: rgba(255, 255, 255, .88);
+
+   /* UI neutrals */
+   --ui-border: rgba(41, 37, 36, .10);
+   --ui-border-strong: rgba(0, 0, 0, .16);
+   --ui-border-soft: rgba(0, 0, 0, .06);
+
+   --ui-ghost-bg: rgba(255, 255, 255, .55);
+   --ui-ghost-bg-hover: rgba(41, 37, 36, .04);
+
+   --ui-hover-soft: rgba(0, 0, 0, .03);
+
+   /* Text helpers */
+   --text-muted-strong: rgba(41, 37, 36, .62);
+   --text-strong: rgba(41, 37, 36, .90);
+
+   /* Overlay */
+   --overlay-bg: rgba(28, 25, 23, .28);
+   --overlay-blur: 2px;
+
+   /* Glass blur token */
+   --glass-blur: 14px;
+
+   /* Dark context surfaces */
+   --surface-dark-1: rgba(255, 255, 255, .12);
+   --border-dark-1: rgba(255, 255, 255, .22);
+   --inner-dark-1: rgba(255, 255, 255, .26);
+
+   --surface-dark-lift: rgba(255, 255, 255, .14);
+   --border-dark-lift: rgba(255, 255, 255, .24);
+
+   /* Legacy mapping (so old files don't break) */
+   --glass-bg: var(--surface-1);
+   --glass-border: var(--border-glass-1);
+   --glass-inner: var(--inner-2);
+
+
+   /* =========================================================
+     5) Radius / Focus
+  ========================================================= */
+
+   --radius: 22px;
+   --radius-sm: 18px;
+   --radius-lg: 26px;
+
+   --shadow-focus: 0 0 0 4px rgba(180, 83, 9, .12);
+
+
+   /* =========================================================
+     5.5) Spacing System (Brand v2)
+     ✅ 注意：不再重複覆蓋 --space-sm/md/lg/xl
+     - 基礎 spacing: --space-*
+     - 內容區塊 spacing: --space-block-*
+  ========================================================= */
+
+   /* Base spacing */
+   --space-2xs: 6px;
+   --space-xs: 10px;
+   --space-sm: 14px;
+   --space-md: 18px;
+   --space-lg: 22px;
+   --space-xl: 28px;
+   --space-2xl: 34px;
+   --space-3xl: 54px;
+   --space-4xl: 62px;
+   --space-5xl: 72px;
+   --space-6xl: 84px;
+
+   /* Section spacing */
+   --space-section: 96px;
+   --space-section-sm: 72px;
+
+   /* Block spacing (used inside text/content modules) */
+   --space-block-sm: 12px;
+   --space-block-md: 20px;
+   --space-block-lg: 32px;
+   --space-block-xl: 48px;
+
+
+   /* =========================================================
+     5.6) Shadow System (Unified)
+     ✅ 去掉重複定義：--shadow-card / submit tokens 只留一份
+  ========================================================= */
+
+   --shadow-0: none;
+   --shadow-1: 0 10px 26px rgba(28, 25, 23, .07);
+   --shadow-2: 0 20px 52px rgba(28, 25, 23, .12);
+
+   --shadow-glass: 0 20px 60px rgba(28, 25, 23, .08);
+   --shadow-glass-hover: 0 30px 86px rgba(28, 25, 23, .12);
+
+   --shadow-lift-soft: 0 18px 52px rgba(0, 0, 0, .07);
+   --shadow-lift-soft-hover: 0 24px 70px rgba(0, 0, 0, .09);
+
+   --shadow-lift-strong: 0 20px 60px rgba(0, 0, 0, .08);
+   --shadow-lift-strong-hover: 0 26px 74px rgba(0, 0, 0, .10);
+
+   --shadow-btn-primary: 0 10px 24px rgba(28, 25, 23, .12);
+
+   --shadow-pill: inset 0 1px 0 rgba(255, 255, 255, .35),
+      0 6px 18px rgba(28, 25, 23, .05);
+
+   --shadow-dark-1: 0 26px 74px rgba(0, 0, 0, .28);
+
+   /* Legacy shadow mapping */
+   --shadow-soft: var(--shadow-1);
+   --shadow-strong: var(--shadow-2);
+
+   --glass-shadow: var(--shadow-glass);
+   --glass-shadow-hover: var(--shadow-glass-hover);
+
+   /* Service card shadow semantics */
+   --shadow-card: var(--shadow-soft);
+   --shadow-card-hover: var(--shadow-strong);
+
+
+   /* =========================================================
+     6) Layout
+  ========================================================= */
+
+   --l-container: 1120px;
+   --container-pad: 32px;
+
+
+   /* =========================================================
+     7) Header / Drawer (Unified via mapping layer)
+  ========================================================= */
+
+   --header-pad-y: 14px;
+   --header-blur: var(--glass-blur);
+
+   /* unified header tokens */
+   --header-surface: var(--surface-1);
+   --header-border: var(--border-glass-1);
+   --header-shadow: var(--shadow-glass);
+
+   /* unified drawer tokens */
+   --drawer-surface: var(--surface-2);
+   --drawer-border: var(--border-glass-2);
+   --drawer-blur: var(--glass-blur);
+
+   --drawer-link-hover-bg: var(--ui-ghost-bg-hover);
+
+   /* Nav typography */
+   --fs-nav: 14px;
+   --fs-drawer-title: 13px;
+   --ls-drawer-title: .6px;
+
+   /* Controls */
+   --btn-bg: var(--ui-ghost-bg);
+   --btn-border: var(--ui-border);
+
+
+   /* =========================================================
+     7.9) Backward-compatible header vars (keep old names)
+  ========================================================= */
+
+   --header-bg: var(--header-surface);
+   --drawer-shadow: var(--header-shadow);
+
+
+   /* =========================================================
+     8) Pills
+  ========================================================= */
+
+   --pill-bg: rgba(245, 158, 11, .08);
+   --pill-text: rgba(41, 37, 36, .72);
+   --pill-muted-bg: rgba(245, 245, 244, .90);
+
+
+   /* =========================================================
+     9) Service Card
+  ========================================================= */
+
+   --surface-card: rgba(255, 255, 255, .86);
+   --border-card: rgba(0, 0, 0, .05);
+
+
+   /* =========================================================
+     10) Buttons (components required)
+  ========================================================= */
+
+   --btn-border-strong: var(--ui-border-strong);
+   --btn-bg-hover: var(--ui-ghost-bg-hover);
+   --btn-bg-softHover: var(--ui-hover-soft);
+
+
+   /* =========================================================
+     11) Form (components required)
+     ✅ Submit tokens 只留一份（你原本重複定義）
+  ========================================================= */
+
+   --label-text: rgba(0, 0, 0, .75);
+
+   --field-bg: #fff;
+   --field-border: rgba(0, 0, 0, .12);
+   --field-border-focus: rgba(180, 83, 9, .45);
+
+   --submit-bg: rgba(41, 37, 36, .90);
+   --submit-bg-hover: var(--stone-900);
+   --submit-bg-active: var(--stone-800);
+   --submit-text: #fff;
+   --submit-shadow: var(--shadow-btn-primary);
+
+   /* Disabled */
+   --disabled-opacity: .55;
+   --disabled-cursor: not-allowed;
+}

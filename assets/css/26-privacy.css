@@ -1,0 +1,139 @@
+/* =========================================
+   26 - Privacy / Legal Page
+   - Tokenized typography & spacing
+   - Fixed reading width (centered)
+   - Better Chinese line breaks (avoid lonely character)
+   - Justify on >=560px (Word-like)
+========================================= */
+
+
+/* =========================================================
+   1) Reading Width (Intro + Body)
+   目的：
+   - 視窗再寬也維持舒服閱讀寬度
+   - 讓前文與內文同寬、同一條垂直線（不歪）
+========================================================= */
+
+.c-sectionHead--legal,
+.s-legalDoc {
+    max-width: var(--legal-max-w);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ✅ 常見元兇：sectionHead 的子元素自己又有 max-width
+   這裡直接解除，避免前文跟內文寬度不一致 */
+.c-sectionHead--legal .c-sectionHead__sub,
+.c-sectionHead--legal .c-muted {
+    max-width: none;
+}
+
+
+/* =========================================================
+   2) Chinese Line Break Strategy
+   目的：
+   - 避免「只剩一個字被擠到下一行」
+   - 中文盡量不要硬拆字，超長字串仍可換行
+========================================================= */
+
+.c-sectionHead--legal .c-sectionHead__sub,
+.s-legalDoc__p,
+.s-legalDoc__list li {
+    word-break: keep-all;
+    /* 中文不要硬拆字 */
+    line-break: strict;
+    /* 更接近中文排版規則（支援度足夠） */
+    overflow-wrap: anywhere;
+    /* 遇到 URL/英文長字串不會溢出 */
+}
+
+
+/* =========================================================
+   3) Legal Doc Content Base
+========================================================= */
+
+.s-legalDoc {
+    padding: var(--pad-legal-panel);
+    font-size: var(--fs-legal-body);
+    line-height: var(--lh-legal-body);
+    color: var(--text);
+}
+
+
+/* =========================================================
+   4) Headings
+========================================================= */
+
+.s-legalDoc__h2 {
+    margin: var(--space-legal-section) 0 var(--space-legal-block);
+    font-size: var(--fs-legal-h2);
+    line-height: var(--lh-legal-h2);
+    letter-spacing: var(--ls-legal-h2);
+    color: var(--legal-heading-color);
+}
+
+.s-legalDoc__h3 {
+    margin: var(--space-legal-sub) 0 var(--space-legal-block);
+    font-size: var(--fs-legal-h3);
+    line-height: var(--lh-legal-h3);
+    color: var(--legal-heading-color);
+    opacity: .92;
+}
+
+
+/* =========================================================
+   5) Text Blocks
+========================================================= */
+
+.s-legalDoc__p {
+    margin: 0 0 var(--space-legal-block);
+    color: var(--legal-text-color);
+}
+
+.s-legalDoc__list {
+    margin: 0 0 var(--space-legal-block);
+    padding-left: var(--legal-list-indent);
+    color: var(--legal-text-color);
+}
+
+.s-legalDoc__list li {
+    margin: 0 0 calc(var(--space-legal-block) - 4px);
+}
+
+
+/* =========================================================
+   6) Contact Card
+========================================================= */
+
+.s-legalDoc__contactCard {
+    margin-top: var(--space-legal-block);
+    padding: var(--pad-legal-card);
+}
+
+.s-legalDoc__meta {
+    margin: 0;
+    color: var(--legal-text-color);
+}
+
+
+/* =========================================================
+   7) Justify Alignment (Word-like)
+   目的：
+   - 桌機才左右對齊（中文更像 Word）
+   - 手機不開啟，避免字距拉太開不好讀
+========================================================= */
+
+@media (min-width: 560px) {
+
+    .c-sectionHead--legal .c-sectionHead__sub,
+    .s-legalDoc__p,
+    .s-legalDoc__list li {
+        text-align: justify;
+        text-justify: inter-ideograph;
+    }
+}
+
+/* 保險：避免最後一行被強行撐開 */
+.s-legalDoc__p:last-child {
+    text-align-last: auto;
+}

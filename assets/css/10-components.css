@@ -1,0 +1,672 @@
+/* =========================================
+   10 - Components (Brand v2 / Clean)
+   Pure CSS / No build step
+   Naming:
+   - c-* = component
+   Notes:
+   - No rgba() here. All surfaces/borders/shadows live in tokens.
+========================================= */
+
+
+/* =========================================
+   Section Head
+========================================= */
+
+.c-sectionHead {
+    margin-bottom: 46px;
+}
+
+/* 只有 section head 內的 pill 才有下間距（避免 pill 全站自帶 spacing） */
+.c-sectionHead .c-pill {
+    margin-bottom: 12px;
+}
+
+.c-sectionHead--center {
+    text-align: center;
+}
+
+.c-sectionHead--center>* {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* sub：只管寬度與閱讀性，不強迫全站置中 */
+.c-sectionHead__sub {
+    max-width: 56ch;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+/* 置中版本才置中 */
+.c-sectionHead--center .c-sectionHead__sub {
+    text-align: center;
+}
+
+/* =========================================
+   SectionHead - Legal Variant
+   使用 tokens：legal 專用字級
+========================================= */
+
+.c-sectionHead--legal h1 {
+    font-size: var(--fs-h1-legal);
+    line-height: var(--lh-h1-legal);
+    letter-spacing: var(--ls-h1-legal);
+    font-weight: 600;
+}
+
+/* 法律頁副說明（你現在的 c-sectionHead__sub） */
+.c-sectionHead--legal .c-sectionHead__sub {
+    font-size: var(--fs-legal-body);
+    line-height: var(--lh-legal-body);
+    color: var(--muted);
+    max-width: 72ch;
+}
+
+/* （可選）Policy pill 也稍微安靜一點 */
+.c-sectionHead--legal .c-pill {
+    opacity: .88;
+}
+
+/* =========================================
+   List (component)
+========================================= */
+
+.c-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 10px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   Buttons
+========================================= */
+
+.c-btnRow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.c-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 12px 18px;
+    border-radius: 999px;
+
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    text-decoration: none;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: transform .18s ease, background .18s ease, opacity .18s ease, box-shadow .18s ease;
+}
+
+.c-button--primary {
+    background: var(--accent);
+    color: var(--stone-50);
+    border: 1px solid var(--btn-border-strong);
+    box-shadow: var(--shadow-btn-primary);
+}
+
+.c-button--primary:hover {
+    transform: translateY(-1px);
+}
+
+.c-button--ghost {
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    color: inherit;
+}
+
+.c-button--ghost:hover {
+    background: var(--btn-bg-hover);
+}
+
+/* Card buttons */
+.c-button--outline {
+    width: 100%;
+    height: 44px;
+    padding: 10px 0;
+
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 650;
+
+    background: transparent;
+    color: var(--stone-800);
+    border: 1px solid var(--btn-border-strong);
+}
+
+.c-button--outline:hover {
+    background: var(--btn-bg-softHover);
+}
+
+/* Icon button（drawer close / 小按鈕用） */
+.c-iconBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0 12px;
+
+    border: 1px solid var(--btn-border);
+    background: var(--btn-bg);
+    border-radius: 12px;
+
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Keyboard focus ring — keep consistent with system */
+.c-button:focus-visible,
+.c-iconBtn:focus-visible,
+.c-submit:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+/* Optional: prevent focus ring getting clipped on rounded pills */
+.c-button,
+.c-iconBtn,
+.c-submit {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   Pills — Soft Capsule
+========================================= */
+
+.c-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px 16px;
+    border-radius: 999px;
+
+    font-size: 12px;
+    letter-spacing: .08em;
+
+    background: var(--pill-bg);
+    color: var(--pill-text);
+
+    box-shadow: var(--shadow-pill);
+
+    transition: background .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+.c-pill--muted {
+    background: var(--pill-muted-bg);
+    border: 1px solid var(--ui-border-soft);
+}
+
+
+/* =========================================
+   Surfaces — Premium Glass
+========================================= */
+
+.c-card,
+.c-panel {
+    position: relative;
+
+    background: var(--surface-1);
+    border: 1px solid var(--border-glass-1);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-glass), inset 0 1px 0 var(--inner-1);
+
+    transition: box-shadow .22s ease, background .22s ease, border-color .22s ease, filter .22s ease;
+}
+
+.c-panel {
+    padding: 18px;
+}
+
+/* Blur */
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+
+    .c-card,
+    .c-panel {
+        -webkit-backdrop-filter: blur(var(--glass-blur));
+        backdrop-filter: blur(var(--glass-blur));
+    }
+}
+
+/* Dark context */
+.is-dark .c-card,
+.is-dark .c-panel {
+    background: var(--surface-dark-1);
+    border-color: var(--border-dark-1);
+
+    box-shadow: var(--shadow-dark-1), inset 0 1px 0 var(--inner-dark-1);
+}
+
+
+/* =========================================
+   Panel Lift Modifiers
+========================================= */
+
+.c-panel--liftSoft {
+    background: var(--surface-2);
+    border-color: var(--border-glass-2);
+    box-shadow: var(--shadow-lift-soft), inset 0 1px 0 var(--inner-2);
+}
+
+.c-panel--liftStrong {
+    background: var(--surface-3);
+    border-color: var(--border-glass-3);
+    box-shadow: var(--shadow-lift-strong), inset 0 1px 0 var(--inner-2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .c-panel--liftSoft:hover {
+        background: var(--surface-hover-soft);
+        border-color: var(--border-hover-soft);
+
+        box-shadow: var(--shadow-lift-soft-hover), inset 0 1px 0 var(--inner-hover);
+
+        filter: brightness(1.035);
+    }
+
+    .c-panel--liftStrong:hover {
+        background: var(--surface-hover-strong);
+        border-color: var(--border-hover-strong);
+
+        box-shadow: var(--shadow-lift-strong-hover), inset 0 1px 0 var(--inner-hover);
+
+        filter: brightness(1.045);
+    }
+}
+
+/* Optional: dark context tuning */
+.is-dark .c-panel--liftSoft,
+.is-dark .c-panel--liftStrong {
+    background: var(--surface-dark-lift);
+    border-color: var(--border-dark-lift);
+}
+
+/* =========================================
+   Step Card (Flow)
+   - Typography lives here (component)
+========================================= */
+
+.c-stepCard__head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.c-stepCard__kicker {
+    font-size: var(--fs-kicker);
+    letter-spacing: var(--ls-kicker);
+    color: var(--step-kicker-color);
+    font-weight: 650;
+    line-height: 1;
+    opacity: .85;
+}
+
+.c-stepCard__title {
+    font-size: var(--fs-step-title);
+    line-height: var(--lh-step-title);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+
+.c-stepCard__desc {
+    margin: 0;
+    font-size: var(--fs-step-desc);
+    line-height: var(--lh-step-desc);
+    color: var(--step-desc-color);
+}
+
+/* =========================================
+   Service Card — Clean Premium (Quiet Hover)
+========================================= */
+
+.c-serviceCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+
+    background: var(--surface-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border-card);
+
+    box-shadow: var(--shadow-card);
+    transition: box-shadow .25s ease;
+}
+
+@media (hover:hover) and (pointer:fine) {
+    .c-serviceCard:hover {
+        box-shadow: var(--shadow-card-hover);
+    }
+}
+
+/* Media: consistent ratio for all cards */
+.c-serviceCard__media {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* Body */
+.c-serviceCard__body {
+    padding: 18px 18px 20px;
+}
+
+/* Title */
+.c-serviceCard__title {
+    display: block;
+    margin: 6px 0 8px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+}
+
+/* Hide icon completely */
+.c-serviceCard__icon {
+    display: none;
+}
+
+/* Desc */
+.c-serviceCard__desc {
+    margin: 0 0 14px;
+    color: var(--text-muted-strong);
+
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+
+/* =========================================
+   Feature List
+========================================= */
+
+.c-featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 18px;
+}
+
+.c-featureItem {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+}
+
+.c-featureIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: var(--stone-100);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.c-featureTitle {
+    font-weight: 650;
+    margin-bottom: 4px;
+}
+
+.c-featureDesc {
+    color: var(--text-muted-strong);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   Form
+========================================= */
+
+.c-form {
+    display: block;
+}
+
+.c-field {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.c-field:last-child {
+    margin-bottom: 0;
+}
+
+.c-label {
+    font-size: 13px;
+    color: var(--label-text);
+    line-height: 1.5;
+}
+
+.c-required {
+    color: var(--amber-700);
+    font-weight: 700;
+}
+
+.c-input,
+.c-select,
+.c-textarea {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--field-border);
+    background: var(--field-bg);
+
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--text);
+
+    outline: none;
+    appearance: none;
+
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.c-input,
+.c-select {
+    height: 46px;
+}
+
+.c-select {
+    cursor: pointer;
+}
+
+.c-textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.c-input::placeholder,
+.c-textarea::placeholder {
+    color: var(--muted);
+}
+
+.c-input:focus,
+.c-select:focus,
+.c-textarea:focus {
+    border-color: var(--field-border-focus);
+    box-shadow: var(--shadow-focus);
+}
+
+.c-fieldRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* Submit */
+.c-submit {
+    width: 100%;
+    height: 52px;
+
+    border: 0;
+    border-radius: 14px;
+
+    background: var(--submit-bg);
+    color: var(--submit-text);
+
+    font-size: 15px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow: var(--submit-shadow);
+    transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.c-submit:hover {
+    background: var(--submit-bg-hover);
+}
+
+.c-submit:active {
+    background: var(--submit-bg-active);
+    transform: translateY(1px);
+}
+
+.c-submit:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+.c-submit:disabled,
+.c-submit[aria-disabled="true"] {
+    opacity: var(--disabled-opacity);
+    cursor: var(--disabled-cursor);
+    box-shadow: none;
+}
+
+.c-formNote {
+    margin-top: 12px;
+}
+
+/* -----------------------------------------
+   Form Validation / Error Message
+----------------------------------------- */
+.c-error {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--amber-700);
+}
+
+/* -----------------------------------------
+   Form Status Message
+----------------------------------------- */
+/* -----------------------------------------
+   Form Status Message
+   - 用於整張表單送出後的狀態提示
+   - success / error 都維持品牌系統的柔和感
+----------------------------------------- */
+.c-formStatus {
+    display: block;
+    margin-top: 16px;
+    padding: 14px 16px;
+
+    min-height: 1.6em;
+    border-radius: 14px;
+    border: 1px solid var(--ui-border-soft);
+    background: var(--surface-2);
+
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text);
+
+    transition: background .22s ease, border-color .22s ease, color .22s ease;
+}
+
+/* 沒內容時不顯示 */
+.c-formStatus:empty {
+    display: none;
+}
+
+/* 成功：淡淡品牌色，不要太像系統通知 */
+.c-formStatus[data-state="success"] {
+    background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+    border-color: color-mix(in srgb, var(--accent) 32%, var(--ui-border-soft));
+    color: var(--text);
+}
+
+/* 錯誤：沿用網站偏暖的提醒語氣，不刺眼 */
+.c-formStatus[data-state="error"] {
+    background: color-mix(in srgb, var(--amber-700) 9%, var(--surface));
+    border-color: color-mix(in srgb, var(--amber-700) 34%, var(--ui-border-soft));
+    color: var(--text);
+}
+
+/* -----------------------------------------
+   Invalid Field State
+----------------------------------------- */
+.c-input[aria-invalid="true"],
+.c-select[aria-invalid="true"],
+.c-textarea[aria-invalid="true"] {
+    border-color: var(--amber-700);
+    box-shadow: var(--shadow-focus);
+}
+
+/* -----------------------------------------
+   Mobile
+----------------------------------------- */
+@media (max-width: 560px) {
+    .c-fieldRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   CTA Panel (Reusable Section Block)
+========================================= */
+
+.c-ctaPanel {
+    padding: 28px;
+    text-align: center;
+}
+
+.c-ctaPanel__title {
+    margin: 0 0 10px;
+}
+
+.c-ctaPanel__desc {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: var(--fs-small);
+    line-height: 1.75;
+}
+
+.c-ctaPanel .c-btnRow {
+    justify-content: center;
+    margin-top: 0;
+}
+
+@media (max-width: 560px) {
+    .c-ctaPanel {
+        padding: 22px;
+    }
+}
