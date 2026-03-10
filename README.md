@@ -9,6 +9,23 @@ This project serves two purposes:
 
 ---
 
+## Live Preview
+
+https://cupcatsvisual.com
+
+---
+
+## Features
+
+- Clean service-business layout
+- Pure static website (no framework)
+- Modular partial system
+- Booking form with Google Sheets integration
+- SEO-ready structure
+- Lightweight and fast loading
+
+---
+
 ## Tech Stack
 
 Pure static stack.
@@ -17,30 +34,33 @@ Pure static stack.
 - CSS
 - Vanilla JavaScript
 
-No framework.
-No build step.
-No bundler.
+No framework  
+No build step  
+No bundler
 
 ---
 
 ## Project Structure
 
-/assets
-  /css
-  /js
-  /img
+assets/
+  css/
+  js/
+  img/
 
-/partials
+partials/
   header.html
   footer.html
 
-/pages
-  home
-  services
-  booking
-  contact
-  faq
-  privacy
+services/
+booking/
+contact/
+faq/
+privacy/
+about/
+
+index.html  
+robots.txt  
+sitemap.xml  
 
 ---
 
@@ -59,7 +79,7 @@ The brand voice avoids aggressive sales language.
 
 ## CSS Architecture
 
-The CSS follows a layered design system:
+The CSS follows a layered design system.
 
 tokens  
 base  
@@ -67,7 +87,7 @@ layout
 components  
 sections  
 utilities  
-responsive
+responsive  
 
 Naming convention:
 
@@ -76,4 +96,60 @@ l-  layout
 c-  component  
 u-  utility  
 
-Example:
+Examples:
+
+s-section  
+l-container  
+c-button  
+u-mt-md  
+
+---
+
+## Booking Form
+
+The booking system uses:
+
+- JavaScript validation
+- Google Apps Script
+- Google Sheets
+
+Main script:
+
+assets/js/booking-form.js
+
+The form sends booking data to a Google Apps Script endpoint and stores it in Google Sheets.
+
+---
+
+## Deployment
+
+This project can be deployed on any static hosting platform.
+
+Recommended options:
+
+- Cloudflare
+- Cloudflare Pages
+- Netlify
+- GitHub Pages
+
+Since there is no build step, deployment only requires uploading the project files.
+
+---
+
+## Template Usage
+
+To reuse this template:
+
+1. Replace logo
+2. Update brand name
+3. Update contact information
+4. Replace images
+5. Update SEO metadata
+
+The core layout and CSS system can remain unchanged.
+
+---
+
+## License
+
+This template is intended for personal projects or client websites.

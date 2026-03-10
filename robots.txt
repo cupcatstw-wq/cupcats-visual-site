@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://cupcatsvisual.com/sitemap.xml
+Host: https://cupcatsvisual.com
