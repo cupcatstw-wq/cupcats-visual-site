@@ -96,6 +96,11 @@
      - quieter, readable rhythm
   ========================================================= */
 
+   /* Legal page main title */
+   --fs-h1-legal: clamp(28px, 3vw, 38px);
+   --lh-h1-legal: 1.18;
+   --ls-h1-legal: -0.02em;
+
    /* Base body */
    --fs-legal-body: 14px;
    --lh-legal-body: 1.9;
@@ -125,6 +130,7 @@
 
    /* Legal reading width (避免視窗太寬時行長亂掉) */
    --legal-max-w: 72ch;
+
 
    /* =========================================================
      Step Card (Flow) Typography
@@ -211,6 +217,10 @@
    --radius: 22px;
    --radius-sm: 18px;
    --radius-lg: 26px;
+
+   /* Extended radius tokens */
+   --radius-field: 14px;
+   --radius-panel-xl: 28px;
 
    --shadow-focus: 0 0 0 4px rgba(180, 83, 9, .12);
 

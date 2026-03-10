@@ -1,0 +1,390 @@
+/* =========================================
+   26 - 404 Page
+   Cupcats Visual
+   - page-only styles
+   - token-based
+========================================= */
+
+/* =========================================
+   Hero
+========================================= */
+
+.s-notFoundHero {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(var(--space-5xl), 10vw, 120px);
+    background:
+        radial-gradient(circle at top left, var(--surface-hover-soft), transparent 36%),
+        linear-gradient(180deg, #fbf8f3 0%, var(--bg) 100%);
+}
+
+.s-notFoundHero__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background:
+        radial-gradient(circle at 15% 25%, var(--inner-hover), transparent 12%),
+        radial-gradient(circle at 85% 20%, var(--inner-2), transparent 14%),
+        radial-gradient(circle at 78% 78%, var(--surface-hover-soft), transparent 12%);
+}
+
+.s-notFoundHero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--space-xl);
+    align-items: center;
+    grid-template-columns: 1.1fr 0.9fr;
+}
+
+.s-notFoundHero__copy {
+    max-width: 640px;
+}
+
+.s-notFoundHero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    padding: var(--space-2xs) var(--space-block-sm);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: var(--fs-kicker);
+    letter-spacing: .08em;
+    color: var(--muted);
+    background: var(--surface-1);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    margin-bottom: var(--space-sm);
+}
+
+.s-notFoundHero__title {
+    margin-bottom: var(--space-sm);
+}
+
+.s-notFoundHero__desc {
+    max-width: 56ch;
+    margin-bottom: var(--space-lg);
+}
+
+.s-notFoundHero__actions,
+.s-notFoundHero__quickLinks,
+.s-notFoundSuggestion__links {
+    justify-content: flex-start;
+}
+
+.s-notFoundHero__quick {
+    margin-top: var(--space-sm);
+}
+
+.s-notFoundHero__quickTitle {
+    font-size: var(--fs-small);
+    color: var(--muted);
+    margin-bottom: var(--space-xs);
+}
+
+.s-notFoundHero__art {
+    display: flex;
+    justify-content: center;
+}
+
+/* =========================================
+   Hero Card
+========================================= */
+
+.s-notFoundCard {
+    width: min(100%, 440px);
+    padding: clamp(var(--space-lg), 3vw, var(--space-2xl));
+    border: 1px solid var(--line);
+    border-radius: var(--radius-panel-xl);
+    background: var(--surface-2);
+    box-shadow: var(--shadow-lift-soft);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.s-notFoundCard__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 88px;
+    padding: var(--space-2xs) var(--space-sm);
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--fs-kicker);
+    letter-spacing: .08em;
+    margin-bottom: var(--space-md);
+}
+
+.s-notFoundCard__code {
+    font-size: clamp(52px, 8vw, 84px);
+    line-height: 1;
+    margin: 0 0 var(--space-sm);
+    color: var(--text);
+}
+
+.s-notFoundCard__title {
+    margin-bottom: var(--space-xs);
+}
+
+.s-notFoundCard__text {
+    color: var(--muted);
+    margin-bottom: var(--space-md);
+}
+
+.s-notFoundCard__divider {
+    margin: var(--space-md) 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
+.s-notFoundCard__meta {
+    display: grid;
+    gap: var(--space-xs);
+}
+
+.s-notFoundCard__metaItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    text-align: left;
+}
+
+.s-notFoundCard__metaDot {
+    flex: 0 0 auto;
+    width: 9px;
+    height: 9px;
+    margin-top: 7px;
+    border-radius: 999px;
+    background: var(--warm);
+}
+
+.s-notFoundCard__metaText {
+    color: var(--muted);
+    font-size: var(--fs-small);
+    line-height: 1.7;
+}
+
+/* =========================================
+   Guide Section
+========================================= */
+
+.s-notFoundSections {
+    padding-bottom: var(--space-6xl);
+}
+
+.s-notFoundGuide {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.s-notFoundGuide__grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.s-notFoundGuide__card {
+    height: 100%;
+    padding: var(--space-xl);
+}
+
+.s-notFoundGuide__head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-xs);
+}
+
+.s-notFoundGuide__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: var(--stone-100);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.s-notFoundGuide__title {
+    margin: 0;
+}
+
+.s-notFoundGuide__desc {
+    color: var(--muted);
+    margin-bottom: var(--space-sm);
+}
+
+.s-notFoundGuide__card .c-button--outline {
+    width: auto;
+    min-width: 120px;
+    padding-inline: var(--space-sm);
+}
+
+/* =========================================
+   Search Block
+========================================= */
+
+.s-notFoundSearch {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-xl);
+}
+
+.s-notFoundSearch__head {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.s-notFoundSearch__sub {
+    color: var(--muted);
+}
+
+.s-notFoundSearch__form {
+    display: grid;
+    grid-template-columns: minmax(0, 520px) auto;
+    justify-content: center;
+    align-items: end;
+    gap: var(--space-sm);
+}
+
+.s-notFoundSearch__field {
+    min-width: 0;
+}
+
+.s-notFoundSearch__label {
+    display: block;
+    margin-bottom: var(--space-2xs);
+    font-size: var(--fs-small);
+    color: var(--text);
+}
+
+.s-notFoundSearchSection {
+    padding-top: 0;
+}
+
+.s-notFoundSearch__input {
+    width: 100%;
+    height: 52px;
+    padding: 0 var(--space-sm);
+    border-radius: var(--radius-field);
+    border: 1px solid var(--field-border);
+    background: var(--field-bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.s-notFoundSearch__input::placeholder {
+    color: var(--muted);
+}
+
+.s-notFoundSearch__input:focus {
+    border-color: var(--field-border-focus);
+    box-shadow: var(--shadow-focus);
+}
+
+.s-notFoundSearch__button {
+    min-width: 132px;
+    height: 52px;
+    padding: 0 var(--space-sm);
+    border-radius: var(--radius-field);
+    box-shadow: none;
+    white-space: nowrap;
+    align-self: end;
+}
+
+.c-button.s-notFoundSearch__button {
+    border-radius: var(--radius-field);
+}
+
+.c-button--primary.s-notFoundSearch__button {
+    box-shadow: none;
+}
+
+.s-notFoundSearch__note {
+    margin-top: var(--space-sm);
+    text-align: center;
+    font-size: var(--fs-small);
+    color: var(--muted);
+}
+
+/* =========================================
+   Suggestion
+========================================= */
+
+.s-notFoundSuggestion {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--line);
+    text-align: center;
+}
+
+.s-notFoundSuggestion__title {
+    margin-bottom: var(--space-xs);
+    color: var(--muted);
+}
+
+.s-notFoundSuggestion__links {
+    justify-content: center;
+}
+
+.s-notFoundSuggestion__links .c-button--outline,
+.s-notFoundHero__quickLinks .c-button--outline {
+    width: auto;
+    min-width: 120px;
+    padding-inline: var(--space-sm);
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 920px) {
+    .s-notFoundHero__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .s-notFoundHero__copy {
+        max-width: none;
+    }
+
+    .s-notFoundHero__actions,
+    .s-notFoundHero__quickLinks,
+    .s-notFoundSuggestion__links {
+        justify-content: center;
+    }
+
+    .s-notFoundHero__copy,
+    .s-notFoundHero__quick {
+        text-align: center;
+    }
+
+    .s-notFoundGuide__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .s-notFoundSearch {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .s-notFoundSearch__form {
+        grid-template-columns: 1fr;
+    }
+
+    .s-notFoundSearch__button {
+        width: 100%;
+    }
+
+    .s-notFoundCard {
+        width: 100%;
+    }
+}
