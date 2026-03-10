@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://cupcatsvisual.com/sitemap.xml
-Host: https://cupcatsvisual.com

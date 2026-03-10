@@ -238,6 +238,51 @@
     opacity: 0.78;
 }
 
+/* =========================================
+   Footer service links (SEO + UX)
+   ========================================= */
+
+.s-footer__desc {
+    margin-top: 0.5rem;
+}
+
+.s-footer__line {
+    margin: 0.15rem 0;
+}
+
+/* 服務連結 */
+.s-footer__serviceLink {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    transition:
+        transform 0.22s ease,
+        color 0.22s ease,
+        opacity 0.22s ease;
+    will-change: transform;
+}
+
+/* hover 效果：微微浮動 + 顏色變化 */
+.s-footer__serviceLink:hover,
+.s-footer__serviceLink:focus-visible {
+    transform: translateY(-2px);
+    color: var(--color-primary);
+}
+
+/* 可及性 focus */
+.s-footer__serviceLink:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+/* 分隔點 */
+.s-footer__dot {
+    opacity: 0.55;
+    margin: 0 0.25em;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .s-footer {

@@ -4,67 +4,118 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light" />
 
+    <!-- Base -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f7f4ee" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="application-name" content="Cupcats Visual" />
+
+    <!-- SEO -->
     <title>Cupcats Visual｜韓式護膚、岩盤浴、熱蠟除毛、頭皮調理與 SPA 保養</title>
     <meta name="description" content="Cupcats Visual 提供韓式護膚、岩盤浴、熱蠟除毛、頭皮調理、美甲美睫與全身 SPA 等預約制美容保養服務，讓保養回到安靜、舒適的節奏。" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="author" content="Cupcats Visual" />
-
     <link rel="canonical" href="https://cupcatsvisual.com/" />
+
+    <!-- Icons / PWA -->
     <link rel="icon" href="/assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph -->
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:site_name" content="Cupcats Visual" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Cupcats Visual｜韓式護膚、岩盤浴、熱蠟除毛、頭皮調理與 SPA 保養" />
     <meta property="og:description"
         content="Cupcats Visual 提供韓式護膚、岩盤浴、熱蠟除毛、頭皮調理、美甲美睫與全身 SPA 等預約制美容保養服務，讓保養回到安靜、舒適的節奏。" />
     <meta property="og:url" content="https://cupcatsvisual.com/" />
-    <meta property="og:type" content="website" />
     <meta property="og:image" content="https://cupcatsvisual.com/assets/img/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Cupcats Visual 美容保養服務形象圖" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Cupcats Visual｜韓式護膚、岩盤浴、熱蠟除毛、頭皮調理與 SPA 保養" />
     <meta name="twitter:description" content="預約制美容保養服務，提供韓式護膚、岩盤浴、熱蠟除毛、頭皮調理、美甲美睫與全身 SPA。" />
     <meta name="twitter:image" content="https://cupcatsvisual.com/assets/img/og-cover.jpg" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/00-tokens.css">
-    <link rel="stylesheet" href="/assets/css/01-reset-base.css">
-    <link rel="stylesheet" href="/assets/css/02-layout.css">
-    <link rel="stylesheet" href="/assets/css/03-typography.css">
-    <link rel="stylesheet" href="/assets/css/10-components.css">
-    <link rel="stylesheet" href="/assets/css/20-header.css">
-    <link rel="stylesheet" href="/assets/css/21-hero.css">
-    <link rel="stylesheet" href="/assets/css/22-services.css">
-    <link rel="stylesheet" href="/assets/css/23-booking.css">
-    <link rel="stylesheet" href="/assets/css/24-faq.css">
-    <link rel="stylesheet" href="/assets/css/25-footer.css">
-    <link rel="stylesheet" href="/assets/css/90-utilities.css">
-    <link rel="stylesheet" href="/assets/css/99-responsive.css">
+    <meta name="twitter:image:alt" content="Cupcats Visual 美容保養服務形象圖" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BeautySalon",
+      "@id": "https://cupcatsvisual.com/#beautysalon",
       "name": "Cupcats Visual",
       "url": "https://cupcatsvisual.com/",
       "image": "https://cupcatsvisual.com/assets/img/og-cover.jpg",
       "description": "Cupcats Visual 提供韓式護膚、岩盤浴、熱蠟除毛、頭皮調理、美甲美睫與全身 SPA 等預約制美容保養服務，讓保養回到安靜、舒適的節奏。",
-      "serviceType": [
-        "韓式護膚",
-        "岩盤浴",
-        "熱蠟除毛",
-        "頭皮調理",
-        "美甲美睫",
-        "全身 SPA"
-      ],
-      "areaServed": "Taiwan"
+      "areaServed": {
+        "@type": "Country",
+        "name": "Taiwan"
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "韓式護膚"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "岩盤浴"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "熱蠟除毛"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "頭皮調理"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "美甲美睫"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "全身 SPA"
+          }
+        }
+      ]
     }
     </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/00-tokens.css" />
+    <link rel="stylesheet" href="/assets/css/01-reset-base.css" />
+    <link rel="stylesheet" href="/assets/css/02-layout.css" />
+    <link rel="stylesheet" href="/assets/css/03-typography.css" />
+    <link rel="stylesheet" href="/assets/css/10-components.css" />
+    <link rel="stylesheet" href="/assets/css/20-header.css" />
+    <link rel="stylesheet" href="/assets/css/21-hero.css" />
+    <link rel="stylesheet" href="/assets/css/22-services.css" />
+    <link rel="stylesheet" href="/assets/css/23-booking.css" />
+    <link rel="stylesheet" href="/assets/css/24-faq.css" />
+    <link rel="stylesheet" href="/assets/css/25-footer.css" />
+    <link rel="stylesheet" href="/assets/css/90-utilities.css" />
+    <link rel="stylesheet" href="/assets/css/99-responsive.css" />
 </head>
 
 <body>
