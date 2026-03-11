@@ -22,6 +22,11 @@
     padding: var(--space-xl) 0;
 }
 
+/* Help choose band */
+.s-booking--serviceBand {
+    padding: var(--space-5xl) 0;
+}
+
 .s-services .c-sectionHead {
     margin-bottom: var(--space-2xl);
 }
@@ -82,6 +87,10 @@
         padding: var(--space-4xl) 0;
     }
 
+    .s-booking--serviceBand {
+        padding: var(--space-4xl) 0;
+    }
+
     .l-servicesGrid {
         grid-template-columns: repeat(2, minmax(0, 320px));
         justify-content: center;
@@ -101,6 +110,10 @@
 
     .s-services--compact {
         padding: var(--space-lg) 0;
+    }
+
+    .s-booking--serviceBand {
+        padding: var(--space-3xl) 0;
     }
 
     .l-servicesGrid {
