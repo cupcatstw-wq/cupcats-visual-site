@@ -100,12 +100,12 @@
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 10px;
+    gap: 0;
 }
 
 .s-footer__link {
     font-size: 13px;
-    line-height: 1.7;
+    line-height: 1.85;
     color: var(--stone-600);
     text-decoration: none;
     opacity: 0.86;
@@ -127,14 +127,14 @@
     padding: 0;
     margin: 0 0 var(--space-sm);
     display: grid;
-    gap: 10px;
+    gap: 0;
 }
 
 .s-footer__contactItem {
     display: inline-flex;
     align-items: center;
     font-size: 13px;
-    line-height: 1.7;
+    line-height: 1.85;
     color: var(--stone-600);
     text-decoration: none;
     opacity: 0.88;
