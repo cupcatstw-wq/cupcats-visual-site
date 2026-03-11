@@ -266,8 +266,9 @@
 /* hover 效果：微微浮動 + 顏色變化 */
 .s-footer__serviceLink:hover,
 .s-footer__serviceLink:focus-visible {
-    transform: translateY(-2px);
-    color: var(--color-primary);
+    transform: translateY(-1px);
+    color: var(--stone-800);
+    opacity: 1;
 }
 
 /* 可及性 focus */
