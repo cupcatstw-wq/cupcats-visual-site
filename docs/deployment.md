@@ -1,6 +1,6 @@
 # Deployment Guide
 
-This document explains how to deploy the Cupcats Visual website.
+This document explains how to deploy the 玥禾美學｜Yue He Beauty website.
 
 ## Option 1 — Cloudflare (Direct Upload)
 

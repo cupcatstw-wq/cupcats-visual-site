@@ -15,6 +15,12 @@
     .l-container {
         padding-inline: 24px;
     }
+
+    /* Header logo */
+    .site-logo-img {
+        width: 150px;
+        height: auto;
+    }
 }
 
 /* Mobile */
@@ -26,5 +32,10 @@
 
     .l-container {
         padding-inline: 16px;
+    }
+
+    /* Header logo */
+    .site-logo-img {
+        width: 140px;
     }
 }

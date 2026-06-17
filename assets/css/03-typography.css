@@ -36,6 +36,12 @@ h1 {
     margin: 10px 0 16px;
 }
 
+/* Context: Homepage Hero */
+.s-hero--bg h1 {
+    line-height: 1.28;
+    letter-spacing: .02em;
+}
+
 /* Context: Service Hero (typography-only override) */
 .s-hero--service h1 {
     font-size: var(--fs-h1-service);

@@ -1,6 +1,6 @@
 # Setup Guide
 
-This document explains how to run and modify the Cupcats Visual template.
+This document explains how to run and modify the 玥禾美學｜Yue He Beauty template.
 
 ## Tech Stack
 

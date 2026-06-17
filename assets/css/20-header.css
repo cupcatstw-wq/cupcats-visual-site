@@ -38,9 +38,8 @@
 }
 
 .c-brand__logo {
-    height: 34px;
-    width: auto;
-    display: block;
+    width: 180px;
+    height: auto;
     transform: translateY(1px);
 }
 
