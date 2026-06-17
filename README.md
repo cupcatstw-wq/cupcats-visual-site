@@ -1,4 +1,4 @@
-# Cupcats Visual
+# 玥禾美學｜Yue He Beauty
 
 A clean, calm, and minimal static website template designed for service-based brands.
 

@@ -1,5 +1,5 @@
 # Frontend Template Rules v2
-(Cupcats Visual Template)
+(玥禾美學｜Yue He Beauty Template)
 
 這是一套 **可複製、可維護、可擴充** 的前端模板規範。
 
